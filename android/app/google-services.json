@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "556065513743",
+    "project_id": "mentalwellnessapp-bb28b",
+    "storage_bucket": "mentalwellnessapp-bb28b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:556065513743:android:3ea3caff15045328b45e7a",
+        "android_client_info": {
+          "package_name": "com.example.mentalwellnessapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "556065513743-0en6bafloakh6dddhrduukkdred67sqs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUs7-WLNoP4AaVy2yoMjcYqSYqHwyioII"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "556065513743-0en6bafloakh6dddhrduukkdred67sqs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
