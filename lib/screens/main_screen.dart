@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mentalwellnessapp/screens/goals_screen.dart';
 import 'package:mentalwellnessapp/screens/mood_tracker.dart';
 
 class MainScreen extends StatefulWidget {
@@ -12,7 +13,7 @@ class _MainScreenState extends State<MainScreen> with SingleTickerProviderStateM
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(length: 3, vsync: this);
   }
 
   @override
@@ -31,6 +32,7 @@ class _MainScreenState extends State<MainScreen> with SingleTickerProviderStateM
           tabs: [
             Tab(text: 'Home'),
             Tab(text: 'Mood'),
+            Tab(text: 'Goals'),
           ],
         ),
       ),
@@ -43,9 +45,9 @@ class _MainScreenState extends State<MainScreen> with SingleTickerProviderStateM
               child: Text('Home Tab Content'),
             ),
           ),
-
           // Mood Tab Content
           MoodTrackingScreen(),
+          GoalsScreen(),
         ],
       ),
     );

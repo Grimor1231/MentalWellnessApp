@@ -5,6 +5,7 @@ import 'package:mentalwellnessapp/screens/welcome_screen.dart';
 import 'package:mentalwellnessapp/screens/sign_up_screen.dart';
 import 'package:mentalwellnessapp/screens/sign_in_screen.dart';
 import 'package:mentalwellnessapp/screens/main_screen.dart';
+import 'package:mentalwellnessapp/screens/goals_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
               '/signup': (context) => SignUpScreen(),
               '/signin': (context) => SignInScreen(),
               '/main': (context) => MainScreen(),
+              '/goals': (context) => GoalsScreen(),
               // ... (other routes)
             },
           );
