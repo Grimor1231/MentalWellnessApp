@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mentalwellnessapp/screens/goals_screen.dart';
+import 'package:mentalwellnessapp/screens/location_screen.dart';
 import 'package:mentalwellnessapp/screens/mood_tracker.dart';
 import 'package:mentalwellnessapp/screens/home_screen.dart';
 
@@ -14,6 +15,7 @@ class _MainScreenState extends State<MainScreen> {
     HomeScreen(),
     MoodTrackingScreen(),
     GoalsScreen(),
+    LocationScreen(),
   ];
 
   @override
@@ -24,23 +26,33 @@ class _MainScreenState extends State<MainScreen> {
       ),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.shifting,
         currentIndex: _currentIndex,
         onTap: onTabTapped,
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Hospitals',
+            backgroundColor: Colors.blue,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.emoji_emotions),
             label: 'Mood',
+            backgroundColor: Colors.blue,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.access_time),
             label: 'Goals',
+            backgroundColor: Colors.blue,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.map),
+            label: 'Map',
+            backgroundColor: Colors.blue,
           ),
         ],
       ),
+
     );
   }
 
