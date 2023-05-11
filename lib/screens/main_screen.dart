@@ -1,54 +1,55 @@
-
 import 'package:flutter/material.dart';
+import 'package:mentalwellnessapp/screens/mood_tracker.dart';
 
 class MainScreen extends StatefulWidget {
   @override
   _MainScreenState createState() => _MainScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> {
-  int _selectedIndex = 0;
+class _MainScreenState extends State<MainScreen> with SingleTickerProviderStateMixin {
+  late TabController _tabController;
 
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text('Mood Tracking'),
-    Text('Goal Progress'),
-    Text('Personalized Recommendations'),
-  ];
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 2, vsync: this);
+  }
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Dashboard'),
+        title: Text('Main Screen'),
+        bottom: TabBar(
+          controller: _tabController,
+          tabs: [
+            Tab(text: 'Home'),
+            Tab(text: 'Mood'),
+          ],
+        ),
       ),
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.mood),
-            label: 'Mood',
+      body: TabBarView(
+        controller: _tabController,
+        children: [
+          // Home Tab Content
+          Container(
+            child: Center(
+              child: Text('Home Tab Content'),
+            ),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.track_changes),
-            label: 'Goals',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Recommendations',
-          ),
+
+          // Mood Tab Content
+          MoodTrackingScreen(),
         ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
       ),
     );
   }
 }
+
+
