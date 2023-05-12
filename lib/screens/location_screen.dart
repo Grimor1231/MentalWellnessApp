@@ -4,10 +4,26 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:http/http.dart' as http;
 
 class LocationScreen extends StatefulWidget {
   @override
   _LocationScreenState createState() => _LocationScreenState();
+  Future<List> getNearbyHospitals() async {
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
+
+    final response = await http.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${position.latitude},${position.longitude}&radius=5000&type=hospital&key=AIzaSyA9LoSjyM7-PnBxacsZZkA9M0O0MeAkNGI');
+
+    if (response.statusCode == 200) {
+      // If the server returns a 200 OK response, then parse the JSON.
+      Map<String, dynamic> data = jsonDecode(response.body);
+      return data['results'];
+    } else {
+      // If the server did not return a 200 OK response, then throw an exception.
+      throw Exception('Failed to load nearby hospitals');
+    }
+  }
 }
 
 class _LocationScreenState extends State<LocationScreen> {
