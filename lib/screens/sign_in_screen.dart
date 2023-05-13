@@ -76,7 +76,7 @@ class _SignInScreenState extends State<SignInScreen> {
     ),
 
 
-    SizedBox(height: 16),
+   /* SizedBox(height: 16),
               Text('OR'),
               SizedBox(height: 16),
               ElevatedButton.icon(
@@ -88,7 +88,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 onPressed: () {
                   // Perform sign in with Google
                 },
-              ),
+              ),*/
             ],
           ),
         ),

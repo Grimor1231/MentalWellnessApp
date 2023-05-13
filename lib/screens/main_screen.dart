@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mentalwellnessapp/screens/calendar_screen.dart';
 import 'package:mentalwellnessapp/screens/goals_screen.dart';
 import 'package:mentalwellnessapp/screens/location_screen.dart';
 import 'package:mentalwellnessapp/screens/mood_tracker.dart';
@@ -15,15 +16,13 @@ class _MainScreenState extends State<MainScreen> {
     HomeScreen(),
     MoodTrackingScreen(),
     GoalsScreen(),
+    CalendarScreen(),
     LocationScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Mental Wellness App'),
-      ),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.shifting,
@@ -43,6 +42,11 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.access_time),
             label: 'Goals',
+            backgroundColor: Colors.blue,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.calendar_month),
+            label: 'Calendar',
             backgroundColor: Colors.blue,
           ),
           BottomNavigationBarItem(

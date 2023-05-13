@@ -39,6 +39,7 @@ dependencies:
   geocoding: ^2.0.1
   google_maps_flutter: ^2.2.6
   location: ^4.4.0
+  flutter_local_notifications: ^8.2.0
   # ... other packages
 
 
